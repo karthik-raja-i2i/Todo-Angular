@@ -1,0 +1,27 @@
+<div class="tasks" *ngIf = "currentTask != null">
+    <h1 class= "subTaskHeader" *ngIf = "currentTask">       
+        <input class="taskHeading" [(ngModel)] = "currentTask.name"/>
+        <i class="contextIcon" (click) = "showDeleteOption()"></i>
+        <div class="categoryDeletion" *ngIf = "showDelete">
+            <p (click) = "deleteCurrentCategory()">Delete</p>
+        </div>
+        <p id="stats">{{stats}}</p>
+    </h1>
+    <div class="subTaskDetails">
+        <div class = "subTask" id= {{subTask.id}} (click) = showStepsMenu(subTask) *ngFor = "let subTask of currentTask.subtasks">
+            <div *ngIf="subTask.isAvailable">
+                <i (click)= "changeSubTaskStatus(subTask)" class="selectIcon" id="unCheckedIcon"></i>
+                <p>{{subTask.info}}</p>
+            </div>
+            <div *ngIf="!subTask.isAvailable">
+                <i (click)= "changeSubTaskStatus(subTask)" class="selectIcon" id="checkedIcon"></i>
+                <p><s>{{subTask.info}}</s></p>
+            </div>
+        </div>
+    </div>
+    <div class=subTaskAddition>
+        <i id="addList" class="taskAdder"></i>
+        <input placeholder="Type here" class="taskAddition"  (keypress) = "saveSubTask($event)">
+    </div>
+</div>
+

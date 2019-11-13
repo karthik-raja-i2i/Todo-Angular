@@ -1,0 +1,179 @@
+$font: 'Roboto', sans-serif;
+$borderStyle: solid;
+$tasksBgColor: #FFFFFF;
+$tasksBorderColor: #d9d9d9;
+$subTaskBorderColor: #d9d9d9;
+$subTaskAdditionBorderColor: #d9d9d9;
+
+.tasks {
+    background-color: $tasksBgColor;
+    position: relative;
+    height: 50em;
+    left: 3em;
+    width: 100em;
+    border-left-style: $borderStyle;
+    border-right-style: $borderStyle;
+    border-color: $tasksBorderColor;
+    border-width: 1px;
+    transition: 0.3s;
+    display: flex;
+    top: 2.5em;
+
+    h1 {
+        position: absolute;
+        top: 0em;
+        left: 2em;
+        font-size: 180%;
+    }
+
+    #stats {
+        position: absolute;
+        top: 4em;
+        font-size: 28%;
+        left: 0em;
+        font-family: $font;
+        width: 11em;
+    }
+}
+
+.tasksClosed {
+    width: 85em;
+    margin-left: 15em;
+}
+  
+.tasks {
+    .taskHeading {
+        color: #117AD3;
+        font-family: $font;
+        border-style: none;
+        font-size: 120%;
+        outline: none;
+    }
+
+    .contextIcon {
+        background: url("/assets/img/options.png");
+        position: relative;
+        top: 0.2em;
+        right: 11em;
+        height: 0.55em;
+        display: inline-block;
+        width: 0.55em;
+        cursor: pointer;       
+    }
+ 
+    .categoryDeletion {
+        position: relative;
+        top: -3.5em;
+        cursor: pointer;
+        font-family: $font;
+        height: 2em;
+        width: 5em;
+        font-size: 35%;
+        right: -15em;
+        background-color: $tasksBgColor;
+        align-content: center;
+        display: block;
+    }
+
+    .categoryDeletion p {
+        position: relative;
+        top: 0.5em;
+        right: -1em;
+        font-weight: normal;
+    }
+}
+
+.tasks {
+    .subTaskDetails {
+        position: relative;
+        padding: 1em 1em 1em 4em;
+        font-family: $font;
+        left: -2em;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 52em;
+        top: 5em;
+        height: fit-content;
+        
+        p {
+            cursor: pointer;
+        }
+    }
+}
+
+.tasks {
+    .subTaskDetails {
+        .subTask {
+            position: relative;
+            width: 70em;
+            height: 4em;
+            right: -4em;
+            top: -1em;
+            border-bottom-style: $borderStyle;
+            border-width: 1px;
+            font-family: $font;
+            align-content: center;
+            border-color: $subTaskBorderColor;
+            display:block;
+
+            .selectIcon {
+                height: 2.5em;
+                width: 2.5em;
+                display: block;
+                position: relative; 
+                top: 1.2em;
+                left: 0.5em;
+            }
+            #unCheckedIcon {
+                background-image: url("/assets/img/uncheck.png");
+            }
+            
+            #checkedIcon {
+                background-image: url("/assets/img/check.png");
+            }
+
+            p {
+                position: relative;
+                top: -1.5em;
+                left: 4em;
+                font-size: 125%;
+            }
+        }
+    }
+}
+
+.tasks{
+    .subTaskAddition {
+        position: relative;
+        left: -43em;
+        top: 16.5em;
+        width: 38em;
+        height: 3em;
+        font-family: $font;
+        display: block;
+
+        .taskAdder {
+            position: relative;
+            height: 1.5em;
+            left: 0.3em;
+            display: inline-block;
+            width: 1.5em;
+            top: 1.3em;
+            background: url("/assets/img/addList.png");
+        }
+
+        .taskAddition {
+            position: relative;
+            top: -0.3em;
+            border: none;
+            width: 46em;
+            outline: none;
+            display: block;
+            left: 3em;
+            border-bottom-style: $borderStyle;
+            border-color: $subTaskAdditionBorderColor;
+            border-width: 1px;
+        }
+    }
+}
+  

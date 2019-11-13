@@ -1,0 +1,39 @@
+<div class="menu" >
+    <button (click) = "toggle($event)" class="menuButton" id="sideNav" value="open"></button><br><br>
+    <div class= "menuOptions" id="options">
+        <div class="sideMenu">
+            <i class="sideMenuIcons" id="sun"></i>
+            <a href="#"> My Day</a>
+        </div>
+        <div class="sideMenu">
+            <i class="sideMenuIcons" id="star"></i>
+            <a href="#"> Important</a>
+        </div>
+        <div class="sideMenu">
+            <i class="sideMenuIcons" id="calender"></i>
+            <a href="#"> Planned</a>
+        </div>
+        <div class="sideMenu">
+            <i class="sideMenuIcons" id="home"></i>
+            <a href="#"> Tasks</a>
+        </div>
+        <div class="sideMenu">
+            <i class="sideMenuIcons" id="list"></i>
+            <a href="#"> My List</a>
+        </div>
+        <div class="category" *ngFor = "let task of tasks.allTasks">
+            <div class = "categoryName" id= {{task.id}} (click) = addSubTask(task) *ngIf = "!task.isDeleted">
+                <i class="sideMenuIcons" id="list" display="inline"></i>
+                <p>{{task.name}}</p>
+                <p class="categoryStats">{{categoryStats}}</p>              
+            </div>
+        </div>
+        <div class="addCate" id="addCategory">
+            <i class="sideMenuIcons" id="addList"></i>
+            <input [(ngModel)]="taskName" (keypress) = "addCategory($event)" class= "newList" type="text" value="" placeholder= "New List">
+        </div>
+        <p class="totalCategories">{{stats}}</p>
+    </div>
+</div>
+
+

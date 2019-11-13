@@ -1,0 +1,34 @@
+<div *ngIf = "currentSubTask != null" class="stepDetails">
+    <div class="taskSteps">
+        <div class="stepHeader">
+            <p id="stepStats">{{stats}}</p>
+            <input id="stepHeading" [(ngModel)] = "currentSubTask.info"/>
+            <input type="checkbox" id="taskCheckBox">
+        </div>
+        <div class="stepInputDiv">
+            <div class="stepInput">
+                <input class="inputStep" placeholder="Add step" type="text" (keypress) = "saveStep($event)" value="">
+            </div>
+        </div>
+        <div class="steps" >
+            <div class="subStep" *ngFor = "let step of currentSubTask.steps" (click)= "changeStepStatus(step)">
+                <div *ngIf="step.isAvailable && !step.isDeleted">
+                    <p class="stepDetail">{{step.name}}</p>
+                    <i class="stepDeletion" (click)= "deleteStep(step)"></i>
+                </div>
+                <div *ngIf="!step.isAvailable && !step.isDeleted">
+                    <p class="stepDetail"><s>{{step.name}}</s></p>
+                    <i class="stepDeletion" (click)= "deleteStep(step)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scheduler"></div>
+    <div class="reminder"></div>                        
+    <div class="taskNotes">
+        <textarea class="notes" value= {{currentSubTask.notes}} placeholder="Add a note" (keypress) = "saveNotes($event)"></textarea>
+    </div>
+    <i class="slider" (click)= "toggleSteps()"></i>
+    <i class="trash" (click)= "deleteCurrentSubTask()"></i>
+</div>
+

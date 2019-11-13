@@ -1,0 +1,57 @@
+$headercolor: #117AD3;
+$searchBoxColor: #b3d9ff;
+$headerTitle: white;
+$headerFont: 'Roboto', sans-serif;
+
+.header {
+    position: absolute;
+    background-color: $headercolor;
+    height: 3em;
+    width: 100%;
+    margin: -1em;
+    top: 1em;
+  }
+  
+.header {
+    h3 {
+        position: relative;
+        font-family: $headerFont;
+        left: 3em;
+        top: -1.5em;
+        color: $headerTitle;
+        font-size: 100%;
+        width: 5em;
+    }
+    .roundMenu {
+        position: relative;
+        left: 0.8em;
+        width: 1.2em ;
+        height: 1.2em;
+        background: url("/assets/img/menu2.svg");
+        display: inline-block;
+        top: 1em;
+        cursor: pointer;
+    }
+    .searchBox {
+        position: absolute;
+        width: 26em;
+        height: 2em;
+        top: 0.5em;
+        right: 36em;
+        background-color: $searchBoxColor;
+        border-radius: 0.15em;
+        font-size: 100%;
+        font-family: $headerFont;
+
+        .lens {
+            position: relative;
+            width: 26em;
+            height: 2.5em;
+            outline:none;
+            background: url("/assets/img/search.svg");
+        }
+    }
+    .searchBox:hover {
+        background-color: white;
+    }
+}
